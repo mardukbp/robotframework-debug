@@ -26,7 +26,7 @@ def get_lib_keywords(library) -> list[KeywordDoc]:
         if isinstance(library, ResourceFile):
             _lib_keywords_cache[library.name] = ImportedResourceDocBuilder().build(library)
         else:
-            _lib_keywords_cache[library.name] = ImportedLibraryDocBuilder().build(library)
+            _lib_keywords_cache[library.name] = ImportedLibraryDocBuilder('ROBOT').build(library)
     return _lib_keywords_cache[library.name].keywords
 
 
